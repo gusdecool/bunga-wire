@@ -3,13 +3,16 @@
 	"license": "MIT",
 	"type": "project",
 	"description": "Bunga Mata CMS for Company Profile based on ProcessWire",
+	"autoload": {
+		"psr-0": { "": "install/" }
+	},
     "require": {
         "symfony/console": "*",
 		"doctrine/dbal": "~2.3"
     },
 	"scripts": {
-		"post-update-cmd": [
-			//"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+		"post-install-cmd": [
+			"BungaMata\\BungaWire\\Installer\\Console::install"
 		]
 	}
 }
