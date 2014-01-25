@@ -2,3 +2,5 @@
 .idea/
 
 bower/
+vendor/
+composer.lock
