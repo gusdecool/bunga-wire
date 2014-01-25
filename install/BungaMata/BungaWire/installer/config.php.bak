@@ -214,10 +214,10 @@ $config->dbLowercaseTables = true;
  * Installer: Database Configuration
  * 
  */
-$config->dbHost = 'localhost';
-$config->dbName = 'test';
-$config->dbUser = 'gusdecool';
-$config->dbPass = 'gusdecool';
+$config->dbHost = '{{host}}';
+$config->dbName = '{{database}}';
+$config->dbUser = '{{user}}';
+$config->dbPass = '{{password}}';
 $config->dbPort = '3306';
 
 /**
