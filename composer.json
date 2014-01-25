@@ -8,8 +8,7 @@
 	},
     "require": {
         "symfony/console": "*",
-		"doctrine/dbal": "~2.3",
-		"twig/twig": "~1"
+		"doctrine/dbal": "~2.3"
     },
 	"scripts": {
 		"post-install-cmd": [

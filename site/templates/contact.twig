@@ -1,0 +1,18 @@
+{% include 'template.twig' %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="bunga-form">
+					{% set form = modules.get("FormTemplateProcessor") %}
+					{% do form.set("template", templates.get("formContactUs")) %}
+					{% do form.set("requiredFields", ["formFirstName", "formLastName", "formPhone", "formEmail", "formSubject", "formMessage"]) %}
+					{% do form.set("skipFields", ["title", "metaKeyword", "metaDescription"]) %}
+					{% do form.set("email", page.email) %}
+					{{ form.render() }}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
