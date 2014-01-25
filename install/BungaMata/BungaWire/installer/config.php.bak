@@ -235,3 +235,4 @@ $config->userAuthSalt = 'fe1ef05c4434435e7c6600207b5ce720';
 $config->chmodDir = '0755'; // permission for directories created by ProcessWire
 $config->chmodFile = '0644'; // permission for files created by ProcessWire 
 
+$config->templateExtension = 'twig';
