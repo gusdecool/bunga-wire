@@ -6,8 +6,8 @@
 # http://code.google.com/p/sequel-pro/
 #
 # Host: 127.0.0.1 (MySQL 5.5.33)
-# Database: processwire
-# Generation Time: 2014-01-22 20:44:16 +0000
+# Database: bunga_wire
+# Generation Time: 2014-01-25 20:09:48 +0000
 # ************************************************************
 
 
@@ -645,7 +645,8 @@ VALUES
 	(138,'ProcessProfile',1,'{\"profileFields\":[\"pass\",\"email\"]}'),
 	(139,'SystemUpdater',1,'{\"systemVersion\":3}'),
 	(148,'ProcessForgotPassword',1,''),
-	(150,'FormTemplateProcessor',0,'');
+	(150,'FormTemplateProcessor',0,''),
+	(151,'TemplateTwigReplace',3,'{\"fuel\":\"page, pages, config, session, user, input, templates\",\"cacheEnable\":\"\",\"cacheDir\":\"twig\\/\",\"cacheAutoReload\":1,\"autoEscape\":false}');
 
 /*!40000 ALTER TABLE `modules` ENABLE KEYS */;
 UNLOCK TABLES;
