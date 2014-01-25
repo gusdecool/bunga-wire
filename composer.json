@@ -1,0 +1,15 @@
+{
+	"name": "gusdecool/BungaWire",
+	"license": "MIT",
+	"type": "project",
+	"description": "Bunga Mata CMS for Company Profile based on ProcessWire",
+    "require": {
+        "symfony/console": "*",
+		"doctrine/dbal": "~2.3"
+    },
+	"scripts": {
+		"post-update-cmd": [
+			//"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+		]
+	}
+}
