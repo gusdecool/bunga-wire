@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.33)
 # Database: bunga_wire
-# Generation Time: 2014-01-25 20:09:48 +0000
+# Generation Time: 2014-01-25 20:14:43 +0000
 # ************************************************************
 
 
@@ -472,10 +472,8 @@ VALUES
 	(5,1,0,NULL),
 	(3,92,1,NULL),
 	(98,102,8,''),
-	(97,79,2,''),
-	(97,76,3,''),
-	(97,78,1,''),
 	(97,1,0,''),
+	(97,78,1,''),
 	(1,76,3,''),
 	(1,1,0,''),
 	(1,78,1,''),
@@ -491,7 +489,9 @@ VALUES
 	(99,1,0,''),
 	(99,78,1,''),
 	(99,79,2,''),
-	(99,92,3,NULL);
+	(99,92,3,NULL),
+	(97,79,2,''),
+	(97,76,3,'');
 
 /*!40000 ALTER TABLE `fieldgroups_fields` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -528,12 +528,12 @@ VALUES
 	(97,'FieldtypeText','formFirstName',0,'First Name','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),
 	(98,'FieldtypeText','formLastName',0,'Last Name','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),
 	(99,'FieldtypeText','formPhone',0,'Phone Number','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),
-	(100,'FieldtypeEmail','formEmail',0,'Email Address','{\"size\":0,\"maxlength\":512,\"tags\":\"BungaWire-Form\"}'),
+	(100,'FieldtypeEmail','formEmail',0,'Email Address','{\"size\":0,\"maxlength\":512,\"tags\":\"-BungaWire-Form\"}'),
 	(101,'FieldtypeText','formSubject',0,'Subject','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),
 	(102,'FieldtypeTextarea','formMessage',0,'Message','{\"inputfieldClass\":\"InputfieldTextarea\",\"rows\":5,\"tags\":\"BungaWire-Form\"}'),
 	(44,'FieldtypeImage','imageSlide',0,'Image Slide','{\"extensions\":\"gif jpg jpeg png\",\"entityEncode\":1,\"adminThumbs\":1,\"inputfieldClass\":\"InputfieldImage\",\"maxFiles\":0,\"descriptionRows\":1,\"fileSchema\":2,\"description\":\"Content of image slides, you can upload more than one image.\",\"useTags\":1,\"tags\":\"BungaWire\"}'),
 	(79,'FieldtypeTextarea','metaDescription',4,'Meta Description','{\"textformatters\":[\"TextformatterEntities\"],\"inputfieldClass\":\"InputfieldTextarea\",\"collapsed\":2,\"rows\":3,\"description\":\"Short description of this page, used for Search Engine. Recommended not more than 160 characters.\",\"stripTags\":1,\"tags\":\"BungaWire\"}'),
-	(76,'FieldtypeTextarea','content',0,'Body','{\"inputfieldClass\":\"InputfieldTinyMCE\",\"rows\":20,\"theme_advanced_buttons1\":\"formatselect,|,bold,italic,|,bullist,numlist,|,link,unlink,|,image,|,code,|,fullscreen\",\"theme_advanced_blockformats\":\"p,h2,h3,h4,blockquote,pre\",\"plugins\":\"inlinepopups,safari,media,paste,fullscreen\",\"valid_elements\":\"@[id|class],a[href|target|name],strong\\/b,em\\/i,br,img[src|id|class|width|height|alt],ul,ol,li,p[class],h2,h3,h4,blockquote,-p,-table[border=0|cellspacing|cellpadding|width|frame|rules|height|align|summary|bgcolor|background|bordercolor],-tr[rowspan|width|height|align|valign|bgcolor|background|bordercolor],tbody,thead,tfoot,#td[colspan|rowspan|width|height|align|valign|bgcolor|background|bordercolor|scope],#th[colspan|rowspan|width|height|align|valign|scope],code,pre\",\"tags\":\"BungaWire\"}'),
+	(76,'FieldtypeTextarea','content',0,'Body','{\"inputfieldClass\":\"InputfieldTinyMCE\",\"rows\":20,\"theme_advanced_buttons1\":\"formatselect,|,bold,italic,|,bullist,numlist,|,link,unlink,|,image,|,code,|,fullscreen\",\"theme_advanced_blockformats\":\"p,h2,h3,h4,blockquote,pre\",\"plugins\":\"inlinepopups,safari,media,paste,fullscreen\",\"valid_elements\":\"@[id|class],a[href|target|name],strong\\/b,em\\/i,br,img[src|id|class|width|height|alt],ul,ol,li,p[class],h2,h3,h4,blockquote,-p,-table[border=0|cellspacing|cellpadding|width|frame|rules|height|align|summary|bgcolor|background|bordercolor],-tr[rowspan|width|height|align|valign|bgcolor|background|bordercolor],tbody,thead,tfoot,#td[colspan|rowspan|width|height|align|valign|bgcolor|background|bordercolor|scope],#th[colspan|rowspan|width|height|align|valign|scope],code,pre\",\"tags\":\"-BungaWire\"}'),
 	(78,'FieldtypeText','metaKeyword',4,'Meta Keyword','{\"description\":\"Use this determine meta keyword for Search Engine. Each keyword separated by comma (,).\",\"textformatters\":[\"TextformatterEntities\"],\"collapsed\":2,\"size\":0,\"maxlength\":1024,\"stripTags\":1,\"tags\":\"BungaWire\"}');
 
 /*!40000 ALTER TABLE `fields` ENABLE KEYS */;
@@ -872,8 +872,8 @@ VALUES
 	(4,'role',4,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"Role\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),
 	(5,'permission',5,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"guestSearchable\":1,\"pageClass\":\"Permission\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),
 	(1,'home',1,0,0,'{\"useRoles\":1,\"noParents\":1,\"slashUrls\":1,\"tags\":\"BungaWire\",\"roles\":[37]}'),
-	(44,'formContactUs',98,0,0,'{\"noChildren\":1,\"noParents\":1,\"slashUrls\":1,\"label\":\"Form Contact Us\",\"tags\":\"BungaWire-Form\"}'),
-	(43,'common',97,0,0,'{\"urlSegments\":1,\"slashUrls\":1,\"tags\":\"BungaWire\"}'),
+	(44,'formContactUs',98,0,0,'{\"noChildren\":1,\"noParents\":1,\"slashUrls\":1,\"label\":\"Form Contact Us\",\"tags\":\"-BungaWire-Form\"}'),
+	(43,'common',97,0,0,'{\"urlSegments\":1,\"slashUrls\":1,\"tags\":\"-BungaWire\"}'),
 	(45,'contact',99,0,0,'{\"slashUrls\":1,\"tags\":\"BungaWire\"}');
 
 /*!40000 ALTER TABLE `templates` ENABLE KEYS */;
