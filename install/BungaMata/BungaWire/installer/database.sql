@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.33)
 # Database: bunga_wire
-# Generation Time: 2014-01-25 20:17:29 +0000
+# Generation Time: 2014-01-25 20:45:14 +0000
 # ************************************************************
 
 
@@ -38,7 +38,8 @@ LOCK TABLES `field_content` WRITE;
 INSERT INTO `field_content` (`pages_id`, `data`)
 VALUES
 	(1,'<p>Testing content</p>'),
-	(1001,'<p>This page about us.</p>');
+	(1001,'<p>This page about us.</p>'),
+	(1007,'<h2>Gallery</h2>');
 
 /*!40000 ALTER TABLE `field_content` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -157,6 +158,39 @@ CREATE TABLE `field_formsubject` (
   FULLTEXT KEY `data` (`data`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+
+
+# Dump of table field_imagegallery
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `field_imagegallery`;
+
+CREATE TABLE `field_imagegallery` (
+  `pages_id` int(10) unsigned NOT NULL,
+  `data` varchar(255) NOT NULL,
+  `sort` int(10) unsigned NOT NULL,
+  `description` text NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`pages_id`,`sort`),
+  KEY `data` (`data`),
+  KEY `modified` (`modified`),
+  KEY `created` (`created`),
+  FULLTEXT KEY `description` (`description`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+LOCK TABLES `field_imagegallery` WRITE;
+/*!40000 ALTER TABLE `field_imagegallery` DISABLE KEYS */;
+
+INSERT INTO `field_imagegallery` (`pages_id`, `data`, `sort`, `description`, `modified`, `created`)
+VALUES
+	(1007,'hotel-twin-room.jpg',1,'','2014-01-25 15:35:16','2014-01-25 15:35:16'),
+	(1007,'dummy.jpg',2,'','2014-01-25 15:35:17','2014-01-25 15:35:17'),
+	(1007,'hotel-deluxe-room.jpg',0,'','2014-01-25 15:35:16','2014-01-25 15:35:16'),
+	(1007,'ipad.jpg',3,'','2014-01-25 15:35:17','2014-01-25 15:35:17');
+
+/*!40000 ALTER TABLE `field_imagegallery` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table field_imageslide
@@ -410,7 +444,8 @@ VALUES
 	(54,'Lock or unlock a page'),
 	(1,'Home'),
 	(1001,'About'),
-	(1006,'Contact us');
+	(1006,'Contact us'),
+	(1007,'Gallery');
 
 /*!40000 ALTER TABLE `field_title` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -440,7 +475,8 @@ VALUES
 	(1,'home'),
 	(97,'common'),
 	(98,'formContactUs'),
-	(99,'contact');
+	(99,'contact'),
+	(100,'gallery');
 
 /*!40000 ALTER TABLE `fieldgroups` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -491,7 +527,12 @@ VALUES
 	(99,79,2,''),
 	(99,92,3,NULL),
 	(97,79,2,''),
-	(97,76,3,'');
+	(97,76,3,''),
+	(100,79,2,''),
+	(100,78,1,''),
+	(100,1,0,''),
+	(100,76,3,''),
+	(100,103,4,NULL);
 
 /*!40000 ALTER TABLE `fieldgroups_fields` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -534,7 +575,8 @@ VALUES
 	(44,'FieldtypeImage','imageSlide',0,'Image Slide','{\"extensions\":\"gif jpg jpeg png\",\"entityEncode\":1,\"adminThumbs\":1,\"inputfieldClass\":\"InputfieldImage\",\"maxFiles\":0,\"descriptionRows\":1,\"fileSchema\":2,\"description\":\"Content of image slides, you can upload more than one image.\",\"useTags\":1,\"tags\":\"BungaWire\",\"collapsed\":5}'),
 	(79,'FieldtypeTextarea','metaDescription',4,'Meta Description','{\"textformatters\":[\"TextformatterEntities\"],\"inputfieldClass\":\"InputfieldTextarea\",\"collapsed\":2,\"rows\":3,\"description\":\"Short description of this page, used for Search Engine. Recommended not more than 160 characters.\",\"stripTags\":1,\"tags\":\"BungaWire\"}'),
 	(76,'FieldtypeTextarea','content',0,'Body','{\"inputfieldClass\":\"InputfieldTinyMCE\",\"rows\":20,\"theme_advanced_buttons1\":\"formatselect,|,bold,italic,|,bullist,numlist,|,link,unlink,|,image,|,code,|,fullscreen\",\"theme_advanced_blockformats\":\"p,h2,h3,h4,blockquote,pre\",\"plugins\":\"inlinepopups,safari,media,paste,fullscreen\",\"valid_elements\":\"@[id|class],a[href|target|name],strong\\/b,em\\/i,br,img[src|id|class|width|height|alt],ul,ol,li,p[class],h2,h3,h4,blockquote,-p,-table[border=0|cellspacing|cellpadding|width|frame|rules|height|align|summary|bgcolor|background|bordercolor],-tr[rowspan|width|height|align|valign|bgcolor|background|bordercolor],tbody,thead,tfoot,#td[colspan|rowspan|width|height|align|valign|bgcolor|background|bordercolor|scope],#th[colspan|rowspan|width|height|align|valign|scope],code,pre\",\"tags\":\"-BungaWire\"}'),
-	(78,'FieldtypeText','metaKeyword',4,'Meta Keyword','{\"description\":\"Use this determine meta keyword for Search Engine. Each keyword separated by comma (,).\",\"textformatters\":[\"TextformatterEntities\"],\"collapsed\":2,\"size\":0,\"maxlength\":1024,\"stripTags\":1,\"tags\":\"BungaWire\"}');
+	(78,'FieldtypeText','metaKeyword',4,'Meta Keyword','{\"description\":\"Use this determine meta keyword for Search Engine. Each keyword separated by comma (,).\",\"textformatters\":[\"TextformatterEntities\"],\"collapsed\":2,\"size\":0,\"maxlength\":1024,\"stripTags\":1,\"tags\":\"BungaWire\"}'),
+	(103,'FieldtypeImage','imageGallery',0,'Image Gallery','{\"extensions\":\"gif jpg jpeg png\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldImage\",\"collapsed\":5,\"descriptionRows\":1,\"adminThumbs\":1,\"tags\":\"-BungaWire\",\"fileSchema\":2}');
 
 /*!40000 ALTER TABLE `fields` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -719,7 +761,8 @@ VALUES
 	(303,3,2,'image',17,'2011-03-29 21:37:06',41,'2010-10-13 03:56:48',2,7),
 	(304,2,2,'profile',1025,'2011-05-03 23:38:10',41,'2011-04-25 23:57:18',41,5),
 	(1001,1,43,'about',1,'2014-01-23 03:24:08',41,'2010-10-25 22:39:33',2,0),
-	(1006,1,45,'contact-us',1,'2014-01-23 04:05:33',41,'2014-01-23 03:28:30',41,4);
+	(1006,1,45,'contact-us',1,'2014-01-23 04:05:33',41,'2014-01-23 03:28:30',41,4),
+	(1007,1,46,'gallery',1,'2014-01-26 04:35:31',41,'2014-01-26 04:34:22',41,5);
 
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -755,7 +798,8 @@ VALUES
 	(53,2,'2011-09-06 12:10:09'),
 	(54,2,'2011-09-06 12:10:09'),
 	(1006,1,'2014-01-23 03:28:30'),
-	(1001,1,'2014-01-23 03:24:08');
+	(1001,1,'2014-01-23 03:24:08'),
+	(1007,1,'2014-01-26 04:34:22');
 
 /*!40000 ALTER TABLE `pages_access` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -874,7 +918,8 @@ VALUES
 	(1,'home',1,0,0,'{\"useRoles\":1,\"noParents\":1,\"slashUrls\":1,\"tags\":\"BungaWire\",\"roles\":[37]}'),
 	(44,'formContactUs',98,0,0,'{\"noChildren\":1,\"noParents\":1,\"slashUrls\":1,\"label\":\"Form Contact Us\",\"tags\":\"-BungaWire-Form\"}'),
 	(43,'common',97,0,0,'{\"urlSegments\":1,\"slashUrls\":1,\"tags\":\"-BungaWire\"}'),
-	(45,'contact',99,0,0,'{\"slashUrls\":1,\"tags\":\"BungaWire\"}');
+	(45,'contact',99,0,0,'{\"slashUrls\":1,\"tags\":\"BungaWire\"}'),
+	(46,'gallery',100,0,0,'{\"slashUrls\":1,\"tags\":\"-BungaWire\"}');
 
 /*!40000 ALTER TABLE `templates` ENABLE KEYS */;
 UNLOCK TABLES;

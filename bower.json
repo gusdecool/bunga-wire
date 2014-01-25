@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "jquery": "~1",
-    "bootstrap": "~3.0.3"
+    "bootstrap": "~3.0.3",
+    "fancybox": "~2.1.5"
   }
 }

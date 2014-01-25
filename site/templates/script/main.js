@@ -1,10 +1,3 @@
-jQuery(function($){
+jQuery.noConflict();
 
-});
-
-function alpha(kampret){
-	return kampret
-}
-
-
-
+jQuery(".fancybox").fancybox();

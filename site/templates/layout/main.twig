@@ -6,9 +6,13 @@
 	<meta name="description" content="{{ page.metaDescription }}"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>{{ page.title }}</title>
-	<link rel="stylesheet" href="{{ config.urls.root }}bower/bootstrap/dist/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="{{ config.urls.root }}bower/bootstrap/dist/css/bootstrap-theme.min.css"/>
+	{% block style %}
+		<link rel="stylesheet" href="{{ config.urls.root }}bower/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="{{ config.urls.root }}bower/bootstrap/dist/css/bootstrap-theme.min.css"/>
+		<link rel="stylesheet" href="{{ config.urls.root }}bower/fancybox/source/jquery.fancybox.css"/>
+	{% endblock %}
 	<link rel="stylesheet" href="{{ config.urls.templates }}style/main.css"/>
+
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,8 +53,13 @@
 {% endblock %}
 
 <div id="javascript">
-	<script src="{{ config.urls.root }}bower/jquery/jquery.min.js"></script>
-	<script src="{{ config.urls.root }}bower/bootstrap/dist/js/bootstrap.min.js"></script>
+	{% block script %}
+		<script src="{{ config.urls.root }}bower/jquery/jquery.min.js"></script>
+		<script src="{{ config.urls.root }}bower/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="{{ config.urls.root }}bower/fancybox/source/jquery.fancybox.pack.js"></script>
+		<script src="{{ config.urls.root }}bower/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	{% endblock %}
+	<script src="{{ config.urls.templates }}script/main.min.js"></script>
 </div>
 
 </body>
