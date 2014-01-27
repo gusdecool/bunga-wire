@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.33)
 # Database: bunga_wire
-# Generation Time: 2014-01-25 20:45:14 +0000
+# Generation Time: 2014-01-27 05:04:47 +0000
 # ************************************************************
 
 
@@ -386,6 +386,20 @@ VALUES
 UNLOCK TABLES;
 
 
+# Dump of table field_sitemap_ignore
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `field_sitemap_ignore`;
+
+CREATE TABLE `field_sitemap_ignore` (
+  `pages_id` int(10) unsigned NOT NULL,
+  `data` tinyint(4) NOT NULL,
+  PRIMARY KEY (`pages_id`),
+  KEY `data` (`data`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
 # Dump of table field_title
 # ------------------------------------------------------------
 
@@ -576,7 +590,8 @@ VALUES
 	(79,'FieldtypeTextarea','metaDescription',4,'Meta Description','{\"textformatters\":[\"TextformatterEntities\"],\"inputfieldClass\":\"InputfieldTextarea\",\"collapsed\":2,\"rows\":3,\"description\":\"Short description of this page, used for Search Engine. Recommended not more than 160 characters.\",\"stripTags\":1,\"tags\":\"BungaWire\"}'),
 	(76,'FieldtypeTextarea','content',0,'Body','{\"inputfieldClass\":\"InputfieldTinyMCE\",\"rows\":20,\"theme_advanced_buttons1\":\"formatselect,|,bold,italic,|,bullist,numlist,|,link,unlink,|,image,|,code,|,fullscreen\",\"theme_advanced_blockformats\":\"p,h2,h3,h4,blockquote,pre\",\"plugins\":\"inlinepopups,safari,media,paste,fullscreen\",\"valid_elements\":\"@[id|class],a[href|target|name],strong\\/b,em\\/i,br,img[src|id|class|width|height|alt],ul,ol,li,p[class],h2,h3,h4,blockquote,-p,-table[border=0|cellspacing|cellpadding|width|frame|rules|height|align|summary|bgcolor|background|bordercolor],-tr[rowspan|width|height|align|valign|bgcolor|background|bordercolor],tbody,thead,tfoot,#td[colspan|rowspan|width|height|align|valign|bgcolor|background|bordercolor|scope],#th[colspan|rowspan|width|height|align|valign|scope],code,pre\",\"tags\":\"-BungaWire\"}'),
 	(78,'FieldtypeText','metaKeyword',4,'Meta Keyword','{\"description\":\"Use this determine meta keyword for Search Engine. Each keyword separated by comma (,).\",\"textformatters\":[\"TextformatterEntities\"],\"collapsed\":2,\"size\":0,\"maxlength\":1024,\"stripTags\":1,\"tags\":\"BungaWire\"}'),
-	(103,'FieldtypeImage','imageGallery',0,'Image Gallery','{\"extensions\":\"gif jpg jpeg png\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldImage\",\"collapsed\":5,\"descriptionRows\":1,\"adminThumbs\":1,\"tags\":\"-BungaWire\",\"fileSchema\":2}');
+	(103,'FieldtypeImage','imageGallery',0,'Image Gallery','{\"extensions\":\"gif jpg jpeg png\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldImage\",\"collapsed\":5,\"descriptionRows\":1,\"adminThumbs\":1,\"tags\":\"-BungaWire\",\"fileSchema\":2}'),
+	(104,'FieldtypeCheckbox','sitemap_ignore',0,'Hide page from XML sitemap','{\"description\":\"Hide this page and its children from the XML sitemap\"}');
 
 /*!40000 ALTER TABLE `fields` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -688,7 +703,9 @@ VALUES
 	(139,'SystemUpdater',1,'{\"systemVersion\":3}'),
 	(148,'ProcessForgotPassword',1,''),
 	(150,'FormTemplateProcessor',0,''),
-	(151,'TemplateTwigReplace',3,'{\"fuel\":\"page, pages, config, session, user, input, templates\",\"cacheEnable\":\"\",\"cacheDir\":\"twig\\/\",\"cacheAutoReload\":1,\"autoEscape\":false}');
+	(151,'TemplateTwigReplace',3,'{\"fuel\":\"page, pages, config, session, user, input, templates\",\"cacheEnable\":\"\",\"cacheDir\":\"twig\\/\",\"cacheAutoReload\":1,\"autoEscape\":false}'),
+	(152,'MarkupSitemapXML',3,''),
+	(153,'MarkupCache',3,'');
 
 /*!40000 ALTER TABLE `modules` ENABLE KEYS */;
 UNLOCK TABLES;
