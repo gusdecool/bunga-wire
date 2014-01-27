@@ -7,8 +7,8 @@
 		"psr-0": { "": "install/" }
 	},
     "require": {
-        "symfony/console": "*",
-		"doctrine/dbal": "~2.3"
+        "symfony/console": "~2",
+		"doctrine/dbal": "~2"
     },
 	"scripts": {
 		"post-install-cmd": [

@@ -16,4 +16,13 @@ class Console
 		));
 		$application->run($input);
 	}
+
+	public static function debug()
+	{
+		set_time_limit(0);
+		$application = new Application();
+		$application->add(new InstallRun());
+		$application->add(new DatabaseDump());
+		$application->run();
+	}
 } 
