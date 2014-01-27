@@ -36,15 +36,9 @@
 
 	<div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
 		{% block navigation %}
-			<ul class="nav navbar-nav">
-				{% set root = pages.get("/") %}
-				{% set children = root.children().prepend(root) %}
-				{% for child in children %}
-					<li>
-						<a href="{{ child.url }}">{{ child.title }}</a>
-					</li>
-				{% endfor %}
-			</ul>
+			{% set treeMenu = modules.get("MarkupSimpleNavigation") %}
+			{% set treeMenuOption = {"outer_tpl":"<ul class=\"nav navbar-nav\">||</ul>"} %}
+			{{ treeMenu.render(treeMenuOption) }}
 		{% endblock %}
 	</div>
 </nav>

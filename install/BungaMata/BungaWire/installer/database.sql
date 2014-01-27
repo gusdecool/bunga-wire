@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.33)
 # Database: bunga_wire
-# Generation Time: 2014-01-27 05:04:47 +0000
+# Generation Time: 2014-01-27 05:50:48 +0000
 # ************************************************************
 
 
@@ -705,7 +705,8 @@ VALUES
 	(150,'FormTemplateProcessor',0,''),
 	(151,'TemplateTwigReplace',3,'{\"fuel\":\"page, pages, config, session, user, input, templates\",\"cacheEnable\":\"\",\"cacheDir\":\"twig\\/\",\"cacheAutoReload\":1,\"autoEscape\":false}'),
 	(152,'MarkupSitemapXML',3,''),
-	(153,'MarkupCache',3,'');
+	(153,'MarkupCache',3,''),
+	(154,'MarkupSimpleNavigation',0,'');
 
 /*!40000 ALTER TABLE `modules` ENABLE KEYS */;
 UNLOCK TABLES;
