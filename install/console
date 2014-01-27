@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+
+use BungaMata\BungaWire\Installer\Console;
+
+require __DIR__.'/../vendor/autoload.php';
+
+Console::install();

@@ -4,10 +4,6 @@ namespace BungaMata\BungaWire\Installer;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 
-//use Sensio\Bundle\DistributionBundle\Composer\ScriptHandler as BaseScriptHandler;
-//use Symfony\Component\ClassLoader\ClassCollectionLoader;
-use Symfony\Component\Process\Process;
-
 class Console
 {
 	public static function install()

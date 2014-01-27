@@ -105,8 +105,6 @@ class InstallRun extends Command
 		} else {
 			$output->writeln('Database connected!');
 		}
-
-		return $param;
 	}
 
 	private function populateDatabase(OutputInterface $output)
@@ -123,10 +121,12 @@ class InstallRun extends Command
 				false
 			);
 
-			// if user don't want to use it, rename the database
+			// if user don't want to use it, reselect the database
 			if($confirmation === false) {
 				$output->writeln('Okay, then please reselect database name');
-				$this->selectDatabase($output, __FUNCTION__);
+				$this->selectDatabase($output);
+				$this->populateDatabase($output);
+				return;
 			} else {
 				// Delete database
 				$output->writeln('<info>Delete database....</info>');
@@ -146,16 +146,12 @@ class InstallRun extends Command
 		$output->writeln('<info>Populating table SUCCESS!</info>');
 	}
 
-	private function selectDatabase(OutputInterface $output, $callback = null)
+	private function selectDatabase(OutputInterface $output)
 	{
 		$this->dbName = $this->dialog->ask($output,
 			'<question>What is your database name? [BungaWire]</question> ',
 			'BungaWire'
 		);
-
-		if($callback !== null) {
-			call_user_func_array(array($this, $callback), array($output));
-		}
 	}
 
 	private function createConfigFile(OutputInterface $output)
