@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `field_content`
+-- Table structure for table `field_article`
 --
 
-DROP TABLE IF EXISTS `field_content`;
+DROP TABLE IF EXISTS `field_article`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `field_content` (
+CREATE TABLE `field_article` (
   `pages_id` int(10) unsigned NOT NULL,
   `data` mediumtext NOT NULL,
   PRIMARY KEY (`pages_id`),
@@ -31,13 +31,13 @@ CREATE TABLE `field_content` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `field_content`
+-- Dumping data for table `field_article`
 --
 
-LOCK TABLES `field_content` WRITE;
-/*!40000 ALTER TABLE `field_content` DISABLE KEYS */;
-INSERT INTO `field_content` VALUES (1,'<p>Testing content</p>'),(1001,'<p>This page about us.</p>'),(1007,'<h2>Gallery</h2>');
-/*!40000 ALTER TABLE `field_content` ENABLE KEYS */;
+LOCK TABLES `field_article` WRITE;
+/*!40000 ALTER TABLE `field_article` DISABLE KEYS */;
+INSERT INTO `field_article` VALUES (1,'<p>Testing content</p>'),(1001,'<p>This page about us.</p>'),(1007,'<h2>Gallery</h2>');
+/*!40000 ALTER TABLE `field_article` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -214,6 +214,37 @@ CREATE TABLE `field_formsubject` (
 LOCK TABLES `field_formsubject` WRITE;
 /*!40000 ALTER TABLE `field_formsubject` DISABLE KEYS */;
 /*!40000 ALTER TABLE `field_formsubject` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `field_imagearticle`
+--
+
+DROP TABLE IF EXISTS `field_imagearticle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `field_imagearticle` (
+  `pages_id` int(10) unsigned NOT NULL,
+  `data` varchar(255) NOT NULL,
+  `sort` int(10) unsigned NOT NULL,
+  `description` text NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`pages_id`,`sort`),
+  KEY `data` (`data`),
+  KEY `modified` (`modified`),
+  KEY `created` (`created`),
+  FULLTEXT KEY `description` (`description`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `field_imagearticle`
+--
+
+LOCK TABLES `field_imagearticle` WRITE;
+/*!40000 ALTER TABLE `field_imagearticle` DISABLE KEYS */;
+/*!40000 ALTER TABLE `field_imagearticle` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -529,7 +560,7 @@ CREATE TABLE `fieldgroups_fields` (
 
 LOCK TABLES `fieldgroups_fields` WRITE;
 /*!40000 ALTER TABLE `fieldgroups_fields` DISABLE KEYS */;
-INSERT INTO `fieldgroups_fields` VALUES (2,2,1,NULL),(2,1,0,NULL),(3,3,0,NULL),(3,4,2,NULL),(4,5,0,NULL),(5,1,0,NULL),(3,92,1,NULL),(98,102,8,''),(97,1,0,''),(97,78,1,''),(1,76,3,''),(1,1,0,''),(1,78,1,''),(1,79,2,''),(98,101,7,''),(98,100,6,''),(98,99,5,''),(98,98,4,''),(98,97,3,''),(98,79,2,''),(98,78,1,''),(98,1,0,''),(99,1,0,''),(99,78,1,''),(99,79,2,''),(99,92,3,NULL),(97,79,2,''),(97,76,3,''),(100,79,2,''),(100,78,1,''),(100,1,0,''),(100,76,3,''),(100,103,4,NULL);
+INSERT INTO `fieldgroups_fields` VALUES (2,2,1,NULL),(2,1,0,NULL),(3,3,0,NULL),(3,4,2,NULL),(4,5,0,NULL),(5,1,0,NULL),(3,92,1,NULL),(98,102,8,''),(97,79,2,''),(97,78,1,''),(1,79,2,''),(1,78,1,''),(1,1,0,''),(98,101,7,''),(98,100,6,''),(98,99,5,''),(98,98,4,''),(98,97,3,''),(98,79,2,''),(98,78,1,''),(98,1,0,''),(99,92,3,''),(99,79,2,''),(99,78,1,''),(99,1,0,''),(97,1,0,''),(100,79,2,''),(100,78,1,''),(100,1,0,''),(100,76,3,''),(100,103,4,NULL),(1,76,3,''),(1,105,4,NULL),(97,76,3,''),(97,105,4,NULL),(99,105,4,NULL);
 /*!40000 ALTER TABLE `fieldgroups_fields` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -550,7 +581,7 @@ CREATE TABLE `fields` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `type` (`type`)
-) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -559,7 +590,7 @@ CREATE TABLE `fields` (
 
 LOCK TABLES `fields` WRITE;
 /*!40000 ALTER TABLE `fields` DISABLE KEYS */;
-INSERT INTO `fields` VALUES (1,'FieldtypePageTitle','title',13,'Title','{\"required\":1,\"textformatters\":[\"TextformatterEntities\"],\"size\":0,\"maxlength\":255,\"tags\":\"BungaWire\"}'),(2,'FieldtypeModule','process',25,'Process','{\"description\":\"The process that is executed on this page. Since this is mostly used by ProcessWire internally, it is recommended that you don\'t change the value of this unless adding your own pages in the admin.\",\"collapsed\":1,\"required\":1,\"moduleTypes\":[\"Process\"],\"permanent\":1}'),(3,'FieldtypePassword','pass',24,'Set Password','{\"collapsed\":1,\"size\":50,\"maxlength\":128}'),(5,'FieldtypePage','permissions',24,'Permissions','{\"derefAsPage\":0,\"parent_id\":31,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\"}'),(4,'FieldtypePage','roles',24,'Roles','{\"derefAsPage\":0,\"parent_id\":30,\"labelFieldName\":\"name\",\"inputfield\":\"InputfieldCheckboxes\",\"description\":\"User will inherit the permissions assigned to each role. You may assign multiple roles to a user. When accessing a page, the user will only inherit permissions from the roles that are also assigned to the page\'s template.\"}'),(92,'FieldtypeEmail','email',9,'E-Mail Address','{\"size\":70,\"maxlength\":255}'),(97,'FieldtypeText','formFirstName',0,'First Name','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),(98,'FieldtypeText','formLastName',0,'Last Name','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),(99,'FieldtypeText','formPhone',0,'Phone Number','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),(100,'FieldtypeEmail','formEmail',0,'Email Address','{\"size\":0,\"maxlength\":512,\"tags\":\"-BungaWire-Form\"}'),(101,'FieldtypeText','formSubject',0,'Subject','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),(102,'FieldtypeTextarea','formMessage',0,'Message','{\"inputfieldClass\":\"InputfieldTextarea\",\"rows\":5,\"tags\":\"BungaWire-Form\"}'),(44,'FieldtypeImage','imageSlide',0,'Image Slide','{\"extensions\":\"gif jpg jpeg png\",\"entityEncode\":1,\"adminThumbs\":1,\"inputfieldClass\":\"InputfieldImage\",\"maxFiles\":0,\"descriptionRows\":1,\"fileSchema\":2,\"description\":\"Content of image slides, you can upload more than one image.\",\"useTags\":1,\"tags\":\"BungaWire\",\"collapsed\":5}'),(79,'FieldtypeTextarea','metaDescription',4,'Meta Description','{\"textformatters\":[\"TextformatterEntities\"],\"inputfieldClass\":\"InputfieldTextarea\",\"collapsed\":2,\"rows\":3,\"description\":\"Short description of this page, used for Search Engine. Recommended not more than 160 characters.\",\"stripTags\":1,\"tags\":\"BungaWire\"}'),(76,'FieldtypeTextarea','content',0,'Body','{\"inputfieldClass\":\"InputfieldTinyMCE\",\"rows\":20,\"theme_advanced_buttons1\":\"formatselect,|,bold,italic,|,bullist,numlist,|,link,unlink,|,image,|,code,|,fullscreen\",\"theme_advanced_blockformats\":\"p,h2,h3,h4,blockquote,pre\",\"plugins\":\"inlinepopups,safari,media,paste,fullscreen\",\"valid_elements\":\"@[id|class],a[href|target|name],strong\\/b,em\\/i,br,img[src|id|class|width|height|alt],ul,ol,li,p[class],h2,h3,h4,blockquote,-p,-table[border=0|cellspacing|cellpadding|width|frame|rules|height|align|summary|bgcolor|background|bordercolor],-tr[rowspan|width|height|align|valign|bgcolor|background|bordercolor],tbody,thead,tfoot,#td[colspan|rowspan|width|height|align|valign|bgcolor|background|bordercolor|scope],#th[colspan|rowspan|width|height|align|valign|scope],code,pre\",\"tags\":\"-BungaWire\"}'),(78,'FieldtypeText','metaKeyword',4,'Meta Keyword','{\"description\":\"Use this determine meta keyword for Search Engine. Each keyword separated by comma (,).\",\"textformatters\":[\"TextformatterEntities\"],\"collapsed\":2,\"size\":0,\"maxlength\":1024,\"stripTags\":1,\"tags\":\"BungaWire\"}'),(103,'FieldtypeImage','imageGallery',0,'Image Gallery','{\"extensions\":\"gif jpg jpeg png\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldImage\",\"collapsed\":5,\"descriptionRows\":1,\"adminThumbs\":1,\"tags\":\"-BungaWire\",\"fileSchema\":2}'),(104,'FieldtypeCheckbox','sitemap_ignore',0,'Hide page from XML sitemap','{\"description\":\"Hide this page and its children from the XML sitemap\"}');
+INSERT INTO `fields` VALUES (1,'FieldtypePageTitle','title',13,'Title','{\"required\":1,\"textformatters\":[\"TextformatterEntities\"],\"size\":0,\"maxlength\":255,\"tags\":\"BungaWire\"}'),(2,'FieldtypeModule','process',25,'Process','{\"description\":\"The process that is executed on this page. Since this is mostly used by ProcessWire internally, it is recommended that you don\'t change the value of this unless adding your own pages in the admin.\",\"collapsed\":1,\"required\":1,\"moduleTypes\":[\"Process\"],\"permanent\":1}'),(3,'FieldtypePassword','pass',24,'Set Password','{\"collapsed\":1,\"size\":50,\"maxlength\":128}'),(5,'FieldtypePage','permissions',24,'Permissions','{\"derefAsPage\":0,\"parent_id\":31,\"labelFieldName\":\"title\",\"inputfield\":\"InputfieldCheckboxes\"}'),(4,'FieldtypePage','roles',24,'Roles','{\"derefAsPage\":0,\"parent_id\":30,\"labelFieldName\":\"name\",\"inputfield\":\"InputfieldCheckboxes\",\"description\":\"User will inherit the permissions assigned to each role. You may assign multiple roles to a user. When accessing a page, the user will only inherit permissions from the roles that are also assigned to the page\'s template.\"}'),(92,'FieldtypeEmail','email',9,'E-Mail Address','{\"size\":70,\"maxlength\":255}'),(97,'FieldtypeText','formFirstName',0,'First Name','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),(98,'FieldtypeText','formLastName',0,'Last Name','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),(99,'FieldtypeText','formPhone',0,'Phone Number','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),(100,'FieldtypeEmail','formEmail',0,'Email Address','{\"size\":0,\"maxlength\":512,\"tags\":\"-BungaWire-Form\"}'),(101,'FieldtypeText','formSubject',0,'Subject','{\"size\":0,\"maxlength\":2048,\"tags\":\"BungaWire-Form\"}'),(102,'FieldtypeTextarea','formMessage',0,'Message','{\"inputfieldClass\":\"InputfieldTextarea\",\"rows\":5,\"tags\":\"BungaWire-Form\"}'),(44,'FieldtypeImage','imageSlide',0,'Image Slide','{\"extensions\":\"gif jpg jpeg png\",\"entityEncode\":1,\"adminThumbs\":1,\"inputfieldClass\":\"InputfieldImage\",\"maxFiles\":0,\"descriptionRows\":1,\"fileSchema\":2,\"description\":\"Content of image slides, you can upload more than one image.\",\"useTags\":1,\"tags\":\"BungaWire\",\"collapsed\":5}'),(79,'FieldtypeTextarea','metaDescription',4,'Meta Description','{\"textformatters\":[\"TextformatterEntities\"],\"inputfieldClass\":\"InputfieldTextarea\",\"collapsed\":2,\"rows\":3,\"description\":\"Short description of this page, used for Search Engine. Recommended not more than 160 characters.\",\"stripTags\":1,\"tags\":\"BungaWire\"}'),(76,'FieldtypeTextarea','article',0,'Article','{\"inputfieldClass\":\"InputfieldTinyMCE\",\"rows\":20,\"theme_advanced_buttons1\":\"formatselect,|,bold,italic,|,bullist,numlist,|,link,unlink,|,image,|,code,|,fullscreen\",\"theme_advanced_blockformats\":\"p,h2,h3,h4,blockquote,pre\",\"plugins\":\"inlinepopups,safari,media,paste,fullscreen\",\"valid_elements\":\"@[id|class],a[href|target|name],strong\\/b,em\\/i,br,img[src|id|class|width|height|alt],ul,ol,li,p[class],h2,h3,h4,blockquote,-p,-table[border=0|cellspacing|cellpadding|width|frame|rules|height|align|summary|bgcolor|background|bordercolor],-tr[rowspan|width|height|align|valign|bgcolor|background|bordercolor],tbody,thead,tfoot,#td[colspan|rowspan|width|height|align|valign|bgcolor|background|bordercolor|scope],#th[colspan|rowspan|width|height|align|valign|scope],code,pre\",\"tags\":\"-BungaWire\"}'),(78,'FieldtypeText','metaKeyword',4,'Meta Keyword','{\"description\":\"Use this determine meta keyword for Search Engine. Each keyword separated by comma (,).\",\"textformatters\":[\"TextformatterEntities\"],\"collapsed\":2,\"size\":0,\"maxlength\":1024,\"stripTags\":1,\"tags\":\"BungaWire\"}'),(103,'FieldtypeImage','imageGallery',0,'Image Gallery','{\"extensions\":\"gif jpg jpeg png\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldImage\",\"collapsed\":5,\"descriptionRows\":1,\"adminThumbs\":1,\"tags\":\"-BungaWire\",\"fileSchema\":2}'),(104,'FieldtypeCheckbox','sitemap_ignore',0,'Hide page from XML sitemap','{\"description\":\"Hide this page and its children from the XML sitemap\",\"tags\":\"-BungaWire\"}'),(105,'FieldtypeImage','imageArticle',0,'Image Article','{\"description\":\"Image for article\",\"extensions\":\"gif jpg jpeg png\",\"maxFiles\":0,\"inputfieldClass\":\"InputfieldImage\",\"collapsed\":5,\"descriptionRows\":1,\"tags\":\"-BungaWire\"}');
 /*!40000 ALTER TABLE `fields` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -793,4 +824,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-01-27 17:31:37
+-- Dump completed on 2014-01-30  4:37:56

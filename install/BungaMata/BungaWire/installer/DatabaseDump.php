@@ -47,10 +47,8 @@ class DatabaseDump extends Command
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
 		$this->init();
-		$command = '/Applications/MAMP/Library/bin/mysqldump -v -h'.self::DB_HOST.' -u'.self::DB_USER.' -p'.self::DB_PASS.' '.self::DB_NAME.' > '.__DIR__.'/database.sql';
+		$command = 'mysqldump -v -h'.self::DB_HOST.' -u'.self::DB_USER.' -p'.self::DB_PASS.' '.self::DB_NAME.' > '.__DIR__.'/database.sql';
 		$return = exec($command);
-		echo $return."\n";
-		$process = new Process('whoami');
-		echo $process->getOutput();
+		$output->writeln($return);
 	}
 }
