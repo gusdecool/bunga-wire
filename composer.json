@@ -8,8 +8,7 @@
 	},
     "require": {
         "symfony/console": "~2",
-		"doctrine/dbal": "~2",
-		"symfony/process": "~2"
+		"doctrine/dbal": "~2"
     },
 	"scripts": {
 		"post-install-cmd": [
