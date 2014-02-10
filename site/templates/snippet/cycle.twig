@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-xs-12">
+
+		{# see more option at: http://jquery.malsup.com/cycle2/api/ #}
+		<div class="slide" style="width:400px;">
+			<div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-speed="500">
+				{% for image in page.imageSlide %}
+					{% set thumb = image.size(400, 400) %}
+					<img src="{{ thumb.url }}"/>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+</div>
