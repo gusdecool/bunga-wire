@@ -5,7 +5,7 @@
 	<meta charset="UTF-8"/>
 	<meta name="keywords" content="{{ page.metaKeyword }}"/>
 	<meta name="description" content="{{ page.metaDescription }}"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
 	<title>
 		{% if page.htmlTitle != "" %}
 			{{ page.htmlTitle }}
@@ -52,7 +52,7 @@
 		<a class="navbar-brand" href="{{ config.urls.root }}">Bunga Wire</a>
 	</div>
 
-	<div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		{% block navigation %}
 			{% set treeMenu = modules.get("MarkupSimpleNavigation") %}
 			{% set treeMenuOption = {"outer_tpl":"<ul class=\"nav navbar-nav\">||</ul>"} %}
