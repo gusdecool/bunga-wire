@@ -6,7 +6,13 @@
 	<meta name="keywords" content="{{ page.metaKeyword }}"/>
 	<meta name="description" content="{{ page.metaDescription }}"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>{{ page.title }}</title>
+	<title>
+		{% if page.htmlTitle != "" %}
+			{{ page.htmlTitle }}
+		{% else %}
+			{{ page.title }}
+		{% endif %}
+	</title>
 	{% block style %}
 		<link rel="stylesheet" href="{{ config.urls.root }}bower/bootstrap/dist/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="{{ config.urls.root }}bower/bootstrap/dist/css/bootstrap-theme.min.css"/>

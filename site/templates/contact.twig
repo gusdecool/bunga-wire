@@ -8,7 +8,7 @@
 					{% set form = modules.get("FormTemplateProcessor") %}
 					{% do form.set("template", templates.get("formContactUs")) %}
 					{% do form.set("requiredFields", ["formFirstName", "formLastName", "formPhone", "formEmail", "formSubject", "formMessage"]) %}
-					{% do form.set("skipFields", ["title", "metaKeyword", "metaDescription"]) %}
+					{% do form.set("skipFields", ["title", "metaKeyword", "metaDescription", "htmlTitle"]) %}
 					{% do form.set("email", page.email) %}
 					{{ form.render() }}
 				</div>
