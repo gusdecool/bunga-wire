@@ -10,6 +10,7 @@
 					{% do form.set("requiredFields", ["formFirstName", "formLastName", "formPhone", "formEmail", "formSubject", "formMessage"]) %}
 					{% do form.set("skipFields", ["title", "metaKeyword", "metaDescription", "htmlTitle"]) %}
 					{% do form.set("email", page.email) %}
+					{% do form.set("emailSubject", "Form Contact Submission") %}
 					{{ form.render() }}
 				</div>
 			</div>
