@@ -21,7 +21,7 @@ if(!defined("PROCESSWIRE")) die();
  * To change, see timezone list at: http://php.net/manual/en/timezones.php
  *
  */
-$config->timezone = 'America/New_York';
+$config->timezone = 'Asia/Makassar';
 
 /**
  * sessionName: default session name as used in session cookie
