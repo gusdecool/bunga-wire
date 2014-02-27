@@ -1,7 +1,7 @@
 BungaWire
 =========
 
-Bunga Mata CMS for Company Profile based on ProcessWire
+Bunga Mata CMS for Company Profile based on ProcessWire 2.4
 
 Requirements:
 =============
@@ -14,4 +14,6 @@ Requirements:
 Install
 =======
 
-`composer create-project gusdecool/bunga-wire path/to/project`
+```
+composer create-project gusdecool/bunga-wire path/to/project
+```
