@@ -1,0 +1,48 @@
+//--- Bunga Form ---//
+// Config
+@bunga-form-label-width: 150px;
+@bunga-form-input-width: 200px;
+
+// Pre process
+.bunga-form-input {
+	width: @bunga-form-input-width;
+	border: 1px solid #000;
+	padding: 2px;
+}
+
+// Output
+.bunga-form {
+	ul.Inputfields {
+		li.Inputfield {
+			list-style: none;
+			margin-bottom: 10px;
+
+			label.ui-widget-header {
+				display: inline-block;
+				width: @bunga-form-label-width;
+				margin-right: 10px;
+			}
+
+			div.ui-widget-content {
+				display: inline-block;
+
+				input[type="text"], input[type="email"] {
+					.bunga-form-input
+				}
+
+				textarea {
+					.bunga-form-input
+				}
+			}
+		}
+
+		li.InputfieldSubmit {
+			padding-left: @bunga-form-label-width + 4px;
+			margin-left: 10px;
+
+			button {
+				border: 1px solid #000;
+			}
+		}
+	}
+}

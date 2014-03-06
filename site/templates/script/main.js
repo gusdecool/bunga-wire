@@ -1,3 +1,5 @@
 jQuery.noConflict();
 
-jQuery(".fancybox").fancybox();
+jQuery(document).ready(function($){
+	// Only use $ inside here
+});

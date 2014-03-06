@@ -18,8 +18,6 @@
   ],
   "dependencies": {
     "jquery": "~1",
-    "bootstrap": "~3",
-    "fancybox": "~2",
-    "jquery-cycle2": "~2"
+    "bootstrap": "~3"
   }
 }
