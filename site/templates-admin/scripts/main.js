@@ -18,7 +18,7 @@ $(document).ready(function() {
 	var minWidth = {'width' : '900px'}
 
 	// Collapsible Sidebar //
-    if ($.cookie("sidebar") == "collapsed") {
+    if ($.cookie("sidebar") == "collapsed" || $.cookie("sidebar") === null) {
         $('#toggle').html("Expand Sidebar");
 		$('#toggle').css('left', '-20px');
         $("#content").css(fullWidth);
