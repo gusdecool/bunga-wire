@@ -14,10 +14,11 @@
 		{% endif %}
 	</title>
 	{% block style %}
-
+		<link rel="stylesheet" href="{{ AIOM.CSS([
+		'./style/main.css',
+		'./style/hot.css'
+		]) }}"/>
 	{% endblock %}
-	<link rel="stylesheet" href="{{ config.urls.templates }}style/main.css"/>
-	<link rel="stylesheet" href="{{ config.urls.templates }}style/hot.css"/>
 
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,11 +29,13 @@
 	<![endif]-->
 
 	{% block script %}
-		<script src="{{ config.urls.root }}bower/jquery/dist/jquery.min.js"></script>
-		<script src="{{ config.urls.root }}bower/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="{{ AIOM.JS([
+		'../../bower/jquery/dist/jquery.min.js',
+		'../../bower/bootstrap/dist/js/bootstrap.min.js',
+		'script/main.min.js',
+		'script/hot.js'
+		]) }}"></script>
 	{% endblock %}
-	<script src="{{ config.urls.templates }}script/main.min.js"></script>
-	<script src="{{ config.urls.templates }}script/hot.js"></script>
 </head>
 <body>
 

@@ -291,6 +291,7 @@ class TemplateTwigReplace extends WireData implements Module, ConfigurableModule
 
         $this->twig = new Twig_Environment($loader, $options);
 	    $this->twig->addExtension(new Twig_Extension_Debug());
+	    $this->twig->addGlobal('AIOM', new AllInOneMinify());
         return $this->twig;
     }
 }
