@@ -685,7 +685,7 @@ CREATE TABLE `fieldgroups_fields` (
 
 LOCK TABLES `fieldgroups_fields` WRITE;
 /*!40000 ALTER TABLE `fieldgroups_fields` DISABLE KEYS */;
-INSERT INTO `fieldgroups_fields` VALUES (2,2,1,NULL),(2,1,0,NULL),(3,3,0,NULL),(3,4,2,NULL),(4,5,0,NULL),(5,1,0,NULL),(3,92,1,NULL),(98,107,1,''),(1,76,4,''),(1,105,5,''),(98,78,2,''),(98,79,3,''),(98,97,4,''),(98,98,5,''),(98,99,6,''),(99,92,4,''),(99,79,3,''),(97,1,0,''),(97,107,1,''),(97,78,2,''),(97,79,3,''),(97,76,4,''),(1,78,2,''),(99,1,0,''),(1,79,3,''),(101,108,5,NULL),(101,107,1,'{\"collapsed\":4}'),(101,78,2,'{\"collapsed\":4}'),(102,1,0,''),(102,78,1,'{\"collapsed\":4}'),(102,79,2,'{\"collapsed\":4}'),(101,79,3,'{\"collapsed\":4}'),(99,78,2,''),(98,100,7,''),(98,1,0,''),(1,1,0,''),(1,107,1,''),(102,106,3,''),(102,107,4,'{\"collapsed\":4}'),(97,105,5,''),(99,107,1,''),(99,105,5,''),(98,101,8,''),(98,102,9,''),(101,109,4,NULL),(101,1,0,'{\"collapsed\":4}'),(101,110,6,NULL);
+INSERT INTO `fieldgroups_fields` VALUES (2,2,1,NULL),(2,1,0,NULL),(3,3,0,NULL),(3,4,2,NULL),(4,5,0,NULL),(5,1,0,NULL),(3,92,1,NULL),(98,107,1,''),(1,105,5,''),(1,107,1,''),(98,78,2,''),(98,79,3,''),(98,97,4,''),(98,98,5,''),(98,99,6,''),(99,92,4,''),(99,79,3,''),(97,105,5,''),(97,1,0,''),(97,107,1,''),(97,78,2,''),(97,79,3,''),(1,79,3,''),(1,76,4,''),(99,1,0,''),(1,78,2,''),(101,108,5,NULL),(101,107,1,'{\"collapsed\":4}'),(101,78,2,'{\"collapsed\":4}'),(102,1,0,''),(102,78,1,'{\"collapsed\":4}'),(102,79,2,'{\"collapsed\":4}'),(101,79,3,'{\"collapsed\":4}'),(99,78,2,''),(98,100,7,''),(98,1,0,''),(1,1,0,''),(102,106,3,''),(102,107,4,'{\"collapsed\":4}'),(97,76,4,''),(99,107,1,''),(99,105,5,''),(98,101,8,''),(98,102,9,''),(101,109,4,NULL),(101,1,0,'{\"collapsed\":4}'),(101,110,6,NULL);
 /*!40000 ALTER TABLE `fieldgroups_fields` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -907,7 +907,7 @@ CREATE TABLE `session_login_throttle` (
 
 LOCK TABLES `session_login_throttle` WRITE;
 /*!40000 ALTER TABLE `session_login_throttle` DISABLE KEYS */;
-INSERT INTO `session_login_throttle` VALUES ('admin',9,1394110697);
+INSERT INTO `session_login_throttle` VALUES ('admin',11,1394111593);
 /*!40000 ALTER TABLE `session_login_throttle` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -937,7 +937,7 @@ CREATE TABLE `templates` (
 
 LOCK TABLES `templates` WRITE;
 /*!40000 ALTER TABLE `templates` DISABLE KEYS */;
-INSERT INTO `templates` VALUES (2,'admin',2,8,0,'{\"useRoles\":1,\"parentTemplates\":[2],\"allowPageNum\":1,\"redirectLogin\":23,\"slashUrls\":1,\"noGlobal\":1}'),(3,'user',3,8,0,'{\"useRoles\":1,\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"User\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(4,'role',4,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"Role\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(5,'permission',5,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"guestSearchable\":1,\"pageClass\":\"Permission\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(1,'home',1,0,2419200,'{\"useRoles\":1,\"noParents\":1,\"slashUrls\":1,\"cacheExpire\":2,\"label\":\"Home\",\"roles\":[37]}'),(44,'formContactUs',98,0,0,'{\"useRoles\":1,\"noChildren\":1,\"noParents\":1,\"slashUrls\":1,\"label\":\"Form Contact Us\"}'),(43,'common',97,0,2419200,'{\"urlSegments\":1,\"slashUrls\":1,\"cacheExpire\":2,\"label\":\"Common\"}'),(45,'contact',99,0,0,'{\"slashUrls\":1,\"label\":\"Contact\"}'),(47,'config',101,0,0,'{\"noChildren\":1,\"noParents\":1,\"slashUrls\":1,\"label\":\"Configuration\"}'),(48,'redirect',102,0,0,'{\"slashUrls\":1,\"label\":\"Redirect\"}');
+INSERT INTO `templates` VALUES (2,'admin',2,8,0,'{\"useRoles\":1,\"parentTemplates\":[2],\"allowPageNum\":1,\"redirectLogin\":23,\"slashUrls\":1,\"noGlobal\":1}'),(3,'user',3,8,0,'{\"useRoles\":1,\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"User\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(4,'role',4,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"pageClass\":\"Role\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(5,'permission',5,8,0,'{\"noChildren\":1,\"parentTemplates\":[2],\"slashUrls\":1,\"guestSearchable\":1,\"pageClass\":\"Permission\",\"noGlobal\":1,\"noMove\":1,\"noTrash\":1,\"noSettings\":1,\"noChangeTemplate\":1,\"nameContentTab\":1}'),(1,'home',1,0,0,'{\"useRoles\":1,\"noParents\":1,\"slashUrls\":1,\"cacheExpire\":2,\"label\":\"Home\",\"roles\":[37]}'),(44,'formContactUs',98,0,0,'{\"useRoles\":1,\"noChildren\":1,\"noParents\":1,\"slashUrls\":1,\"label\":\"Form Contact Us\"}'),(43,'common',97,0,0,'{\"urlSegments\":1,\"slashUrls\":1,\"cacheExpire\":2,\"label\":\"Common\"}'),(45,'contact',99,0,0,'{\"slashUrls\":1,\"label\":\"Contact\"}'),(47,'config',101,0,0,'{\"noChildren\":1,\"noParents\":1,\"slashUrls\":1,\"label\":\"Configuration\"}'),(48,'redirect',102,0,0,'{\"slashUrls\":1,\"label\":\"Redirect\"}');
 /*!40000 ALTER TABLE `templates` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -950,4 +950,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-06 21:02:54
+-- Dump completed on 2014-03-06 21:19:03
